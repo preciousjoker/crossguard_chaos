@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://8utlquqbbcsq"]
 
 [ext_resource type="PackedScene" uid="uid://do5p8t0b240m1" path="res://road_piece.tscn" id="1_udryh"]
-[ext_resource type="Texture2D" uid="uid://cqyhmeqxg3kbd" path="res://art/street_piece_start.png" id="2_4dchi"]
-[ext_resource type="Texture2D" uid="uid://ct8n7e0ch0w3k" path="res://art/street_piece.png" id="2_6fcqc"]
+[ext_resource type="Texture2D" uid="uid://cqyhmeqxg3kbd" path="res://Art/street_piece_start.png" id="2_4dchi"]
+[ext_resource type="Texture2D" uid="uid://ct8n7e0ch0w3k" path="res://Art/street_piece.png" id="2_6fcqc"]
 [ext_resource type="PackedScene" uid="uid://yft32qs5qq11" path="res://crosswalk.tscn" id="4_ubkx3"]
 [ext_resource type="PackedScene" uid="uid://dyne0hbq00b11" path="res://asphalt_sign.tscn" id="5_o5yen"]
-[ext_resource type="Texture2D" uid="uid://dnoxwkcexistg" path="res://art/left_straight_right.png" id="6_h7ryn"]
+[ext_resource type="Texture2D" uid="uid://dnoxwkcexistg" path="res://Art/left_straight_right.png" id="6_h7ryn"]
 
 [node name="test_level_1" type="Node2D"]
 

@@ -28,6 +28,7 @@ var requires_signal_to_go = false
 var will_turn: bool = false
 var turn_direction: ETurnDirection = ETurnDirection.NONE
 var drive_mode: EDriveMode = EDriveMode.DRIVE
+var game_manager: GameManager = null
 
 
 func set_valid_waypoints(waypoints: Array[Waypoint]) -> void:
@@ -52,6 +53,7 @@ func _ready() -> void:
 	ray_cast_2d.exclude_parent = true
 	ray_cast_2d.set_target_position(to_local(position + (transform.x * stop_distance)))
 	
+	# handle when car enters RemovalArea
 	self.connect("area_entered", func(area: Area2D) -> void:
 		if area is RemovalArea:
 			GameEvents.car_processed.emit()
@@ -101,15 +103,23 @@ func update_rage_meter(delta: float) -> void:
 	# do nothing if we can't get angry (rage)
 	if !can_build_rage:
 		return
+	
+	var additional_increase := 0.0
+	var top_of_queue := false
 	#check if top of queue
+	if game_manager:
+		top_of_queue = len(game_manager.car_queue) > 0 and game_manager.car_queue[0] == self
+		if top_of_queue:
+			#print("Car at top of queue: %s" % self.name)
+			additional_increase += top_queue_multiplier
 	
 	# check if in queue
-	
-	if not is_instance_valid(rage_meter):
-		print("Error: rage_meter is not valid")
-		return
+	if !top_of_queue and len(game_manager.car_queue) > 0 and game_manager.car_queue.has(self):
+		#print("Car in queue but not at the top: %s" % self.name)
+		additional_increase += queue_multiplier
+
 		
-	var amount_increase: float = rage_increase * delta
+	var amount_increase: float = (rage_increase + additional_increase) * delta
 	rage_meter.value += amount_increase
 
 

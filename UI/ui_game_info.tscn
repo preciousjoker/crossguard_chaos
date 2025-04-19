@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvk2u2mv17bwo"]
 
-[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://art/base_car.png" id="1_nyt02"]
+[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://Art/base_car.png" id="1_nyt02"]
 
 [node name="UI_GameInfo" type="Control"]
 layout_mode = 3

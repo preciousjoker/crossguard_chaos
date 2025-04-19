@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh3p2ud1yqrt8"]
+[gd_scene load_steps=12 format=3 uid="uid://bh3p2ud1yqrt8"]
 
 [ext_resource type="PackedScene" uid="uid://c72s1wbnb7uy0" path="res://GameManager.tscn" id="1_w8yt7"]
 [ext_resource type="PackedScene" uid="uid://8utlquqbbcsq" path="res://test_level.tscn" id="2_0vr8g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://drosal78j0pat" path="res://StopArea.tscn" id="5_8fr7b"]
 [ext_resource type="PackedScene" uid="uid://ddetqnbmplc78" path="res://turn_waypoint.tscn" id="6_a8fdb"]
 [ext_resource type="PackedScene" uid="uid://bvk2u2mv17bwo" path="res://UI/ui_game_info.tscn" id="7_2ykqf"]
+[ext_resource type="AudioStream" uid="uid://c3ehu2bn5s606" path="res://Music/crossroad_chaos_1.ogg" id="7_m0k58"]
 [ext_resource type="Script" path="res://UI/ui_game_info.gd" id="8_tle5v"]
 [ext_resource type="PackedScene" uid="uid://bbdmby8a3pdk3" path="res://UI/UI_GameOverScreen.tscn" id="9_u3bq6"]
 [ext_resource type="PackedScene" uid="uid://c058oqo687wq6" path="res://UI/UI_LevelClearedScreen.tscn" id="10_6g8mo"]
@@ -42,8 +43,22 @@ position = Vector2(-1170, 820)
 rotation = 0.00229049
 
 [node name="SpawnArea3" parent="World2D" instance=ExtResource("4_jv7i8")]
-position = Vector2(1803, 819)
+position = Vector2(1620, 819)
 rotation = 3.14159
+spawn_interval_max = 2.0
+
+[node name="SpawnArea5" parent="World2D" instance=ExtResource("4_jv7i8")]
+position = Vector2(-1630, 970)
+spawn_interval_max = 2.0
+
+[node name="SpawnArea4" parent="World2D" instance=ExtResource("4_jv7i8")]
+position = Vector2(80, 2260)
+rotation = 4.71162
+spawn_interval_max = 2.0
+
+[node name="SpawnArea6" parent="World2D" instance=ExtResource("4_jv7i8")]
+position = Vector2(-70, -470)
+rotation = 1.5708
 spawn_interval_max = 2.0
 
 [node name="LaneLabel1" type="Label" parent="World2D"]
@@ -222,6 +237,13 @@ position = Vector2(80, -380)
 owning_lane = 2
 waypoint_color = Color(1, 1, 0, 1)
 update_line = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="World2D"]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="World2D"]
+stream = ExtResource("7_m0k58")
+autoplay = true
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3

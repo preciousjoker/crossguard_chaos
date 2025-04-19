@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://drosal78j0pat"]
 
 [ext_resource type="Script" path="res://StopArea.gd" id="1_cdn1u"]
-[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://art/base_car.png" id="2_kgfn5"]
+[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://Art/base_car.png" id="2_kgfn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wfla"]
 size = Vector2(119, 30)

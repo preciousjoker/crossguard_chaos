@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rovk7bdkfysp"
-path="res://.godot/imported/crosswalk.png-4aff97660a871dc80d12b05c97d66f6a.ctex"
+uid="uid://brchckdwj0r1q"
+path="res://.godot/imported/car_light.png-06074405478f0259181b08ad06aa8d62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/crosswalk.png"
-dest_files=["res://.godot/imported/crosswalk.png-4aff97660a871dc80d12b05c97d66f6a.ctex"]
+source_file="res://Art/car_light.png"
+dest_files=["res://.godot/imported/car_light.png-06074405478f0259181b08ad06aa8d62.ctex"]
 
 [params]
 

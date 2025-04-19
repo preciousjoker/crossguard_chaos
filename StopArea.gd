@@ -10,6 +10,8 @@ var game_manager: GameManager = null
 
 func _ready() -> void:
 	game_manager = find_game_manager()
+	
+	# Handle when a car enters the stop area
 	connect("area_entered", func(area: Area2D) -> void:
 		if area is Car:
 			area.stop(true)

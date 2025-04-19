@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgukrddftwll3"
-path="res://.godot/imported/straight_and_right_turn.png-e908f76dcb923e11f296bf03946ba867.ctex"
+uid="uid://rovk7bdkfysp"
+path="res://.godot/imported/crosswalk.png-43c7b8b21f4431065c3b3e7109481ead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/straight_and_right_turn.png"
-dest_files=["res://.godot/imported/straight_and_right_turn.png-e908f76dcb923e11f296bf03946ba867.ctex"]
+source_file="res://Art/crosswalk.png"
+dest_files=["res://.godot/imported/crosswalk.png-43c7b8b21f4431065c3b3e7109481ead.ctex"]
 
 [params]
 

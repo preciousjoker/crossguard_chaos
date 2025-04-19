@@ -16,15 +16,17 @@ func _ready() -> void:
 	spawn_timer.connect("timeout", func() -> void:
 		if occupying_car == null and game_manager and game_manager.can_spawn():
 			if world2D:
-				# tell manager we spawned a car
-				game_manager.cars_spawned += 1
-			
 				# set up new car and add to scene
-				var car = car_scene.instantiate()
+				var car: Car = car_scene.instantiate()
 				car.global_position = self.global_position
 				car.global_rotation = self.global_rotation
 				world2D.add_child(car)
 				occupying_car = car
+				
+				# tell manager we spawned a car
+				if game_manager:
+					game_manager.cars_spawned += 1
+					car.game_manager = game_manager
 			
 		# set new wait time for next spawn
 		spawn_timer.wait_time = set_new_wait_time()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnoxwkcexistg"
-path="res://.godot/imported/left_straight_right.png-5150f1666dd4e4a4579de58d2b71fec1.ctex"
+uid="uid://c4ws8ytsvvl7x"
+path="res://.godot/imported/road_piece.png-387397a79938f41aa44a173f166b4a71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/left_straight_right.png"
-dest_files=["res://.godot/imported/left_straight_right.png-5150f1666dd4e4a4579de58d2b71fec1.ctex"]
+source_file="res://Art/road_piece.png"
+dest_files=["res://.godot/imported/road_piece.png-387397a79938f41aa44a173f166b4a71.ctex"]
 
 [params]
 

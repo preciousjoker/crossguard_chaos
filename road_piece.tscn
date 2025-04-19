@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://do5p8t0b240m1"]
+
+[ext_resource type="Texture2D" uid="uid://c4ws8ytsvvl7x" path="res://art/road_piece.png" id="1_rbcmi"]
+
+[node name="RoadPiece" type="Sprite2D"]
+texture = ExtResource("1_rbcmi")

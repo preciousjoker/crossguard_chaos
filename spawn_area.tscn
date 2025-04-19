@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://iwe4d7cmcilt"]
+
+[ext_resource type="Script" path="res://CarSpawnArea.gd" id="1_h2uff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvn81"]
+size = Vector2(157, 57)
+
+[node name="SpawnArea" type="Area2D"]
+script = ExtResource("1_h2uff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fvn81")
+debug_color = Color(0, 0.651315, 0.00962461, 0.42)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0

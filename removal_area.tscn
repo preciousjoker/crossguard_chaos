@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://liedta27gnon"]
+
+[ext_resource type="Script" path="res://removal_area.gd" id="1_taq5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecmp6"]
+size = Vector2(303, 93.75)
+
+[node name="RemovalArea" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_taq5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.125)
+shape = SubResource("RectangleShape2D_ecmp6")
+debug_color = Color(0.992909, 0, 0.245347, 0.42)

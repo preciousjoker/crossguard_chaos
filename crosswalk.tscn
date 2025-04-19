@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://yft32qs5qq11"]
+
+[ext_resource type="Texture2D" uid="uid://rovk7bdkfysp" path="res://art/crosswalk.png" id="1_rj0g4"]
+
+[node name="Crosswalk" type="Sprite2D"]
+texture = ExtResource("1_rj0g4")

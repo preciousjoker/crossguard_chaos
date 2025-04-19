@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://de0t32mi52yll"]
+
+[ext_resource type="Script" path="res://car.gd" id="1_fgk4r"]
+[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://art/base_car.png" id="2_d32ma"]
+[ext_resource type="Texture2D" uid="uid://brchckdwj0r1q" path="res://art/car_light.png" id="3_oi6tj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp10k"]
+radius = 9.5
+height = 65.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7enf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8xli"]
+bg_color = Color(0.552962, 3.97079e-07, 4.81307e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="CarHitBox" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_fgk4r")
+stop_distance = 150.0
+turn_signal_interval = 0.5
+possible_colors = Array[Color]([Color(0.741495, 0.232378, 0.688325, 1), Color(0.746815, 0, 0.0900944, 1), Color(0, 0.638572, 0.967057, 1), Color(0, 0.345098, 0.901961, 1), Color(0.475657, 0.154644, 1.44392e-07, 1), Color(0.0164856, 0.525203, 0.506492, 1), Color(0.50431, 0.219765, 4.81308e-08, 1), Color(0.317199, 0.0005317, 0.439672, 1)])
+max_time = 5.0
+
+[node name="CarSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_d32ma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("CapsuleShape2D_rp10k")
+
+[node name="LeftTurnLight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(56, -14)
+texture = ExtResource("3_oi6tj")
+
+[node name="RightTurnLight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(56, 10)
+texture = ExtResource("3_oi6tj")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TurnSignalTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 10.0
+
+[node name="RageMeter" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -57.0
+offset_top = 39.0
+offset_right = 53.0
+offset_bottom = 66.0
+theme_override_styles/background = SubResource("StyleBoxFlat_o7enf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x8xli")
+step = 0.001
+value = 50.0
+show_percentage = false

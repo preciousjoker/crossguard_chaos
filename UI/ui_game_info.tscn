@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvk2u2mv17bwo"]
+
+[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://art/base_car.png" id="1_nyt02"]
+
+[node name="UI_GameInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lbl_CarsLeft" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CarImage" type="TextureRect" parent="."]
+modulate = Color(0, 0.470588, 1, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 20.0
+offset_right = -92.0
+offset_bottom = 80.0
+grow_horizontal = 0
+rotation = -0.00445926
+texture = ExtResource("1_nyt02")
+expand_mode = 1
+
+[node name="Lbl_TimerText" type="Label" parent="."]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 25
+text = "TIME LEFT: "
+vertical_alignment = 1
+
+[node name="Lbl_TimeLeft" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 170.0
+offset_top = 40.0
+offset_right = 220.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 25
+text = "1:30"
+horizontal_alignment = 1
+vertical_alignment = 1

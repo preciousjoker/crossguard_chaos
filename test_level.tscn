@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://8utlquqbbcsq"]
+
+[ext_resource type="PackedScene" uid="uid://do5p8t0b240m1" path="res://road_piece.tscn" id="1_udryh"]
+[ext_resource type="Texture2D" uid="uid://cqyhmeqxg3kbd" path="res://art/street_piece_start.png" id="2_4dchi"]
+[ext_resource type="Texture2D" uid="uid://ct8n7e0ch0w3k" path="res://art/street_piece.png" id="2_6fcqc"]
+[ext_resource type="PackedScene" uid="uid://yft32qs5qq11" path="res://crosswalk.tscn" id="4_ubkx3"]
+[ext_resource type="PackedScene" uid="uid://dyne0hbq00b11" path="res://asphalt_sign.tscn" id="5_o5yen"]
+[ext_resource type="Texture2D" uid="uid://dnoxwkcexistg" path="res://art/left_straight_right.png" id="6_h7ryn"]
+
+[node name="test_level_1" type="Node2D"]
+
+[node name="RoadPiece" parent="." instance=ExtResource("1_udryh")]
+
+[node name="RoadPiece16" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, -300)
+
+[node name="RoadPiece22" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, -600)
+
+[node name="RoadPiece2" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 300)
+
+[node name="RoadPiece3" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 600)
+rotation = 3.14159
+texture = ExtResource("2_4dchi")
+
+[node name="RoadPiece10" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 1200)
+texture = ExtResource("2_4dchi")
+
+[node name="RoadPiece11" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 1500)
+
+[node name="RoadPiece12" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 1800)
+
+[node name="RoadPiece14" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 2100)
+
+[node name="RoadPiece21" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 2400)
+
+[node name="RoadPiece4" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(300, 900)
+rotation = -1.5708
+texture = ExtResource("2_4dchi")
+
+[node name="RoadPiece5" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(600, 900)
+rotation = 1.5708
+
+[node name="RoadPiece6" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(900, 900)
+rotation = 1.5708
+
+[node name="RoadPiece13" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(1200, 900)
+rotation = 1.5708
+
+[node name="RoadPiece18" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(1500, 900)
+rotation = 1.5708
+
+[node name="RoadPiece19" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(1800, 900)
+rotation = 1.5708
+
+[node name="RoadPiece7" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(-900, 900)
+rotation = 1.5708
+
+[node name="RoadPiece15" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(-1200, 900)
+rotation = 1.5708
+
+[node name="RoadPiece17" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(-1500, 900)
+rotation = 1.5708
+
+[node name="RoadPiece20" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(-1800, 900)
+rotation = 1.5708
+
+[node name="RoadPiece8" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(-600, 900)
+rotation = 1.5708
+
+[node name="RoadPiece9" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(-300, 900)
+rotation = 1.5708
+texture = ExtResource("2_4dchi")
+
+[node name="middle_road" parent="." instance=ExtResource("1_udryh")]
+position = Vector2(0, 900)
+rotation = 1.5708
+texture = ExtResource("2_6fcqc")
+
+[node name="Crosswalk" parent="." instance=ExtResource("4_ubkx3")]
+position = Vector2(0, 1100)
+
+[node name="Crosswalk2" parent="." instance=ExtResource("4_ubkx3")]
+position = Vector2(0, 700)
+
+[node name="Crosswalk3" parent="." instance=ExtResource("4_ubkx3")]
+position = Vector2(200, 900)
+rotation = 1.5708
+
+[node name="Crosswalk4" parent="." instance=ExtResource("4_ubkx3")]
+position = Vector2(-200, 900)
+rotation = 1.5708
+
+[node name="AsphaltSign3" parent="." instance=ExtResource("5_o5yen")]
+position = Vector2(78, 1210)
+scale = Vector2(0.207031, 0.207031)
+texture = ExtResource("6_h7ryn")
+
+[node name="AsphaltSign5" parent="." instance=ExtResource("5_o5yen")]
+position = Vector2(329, 814)
+rotation = -1.5708
+scale = Vector2(0.207031, 0.207031)
+texture = ExtResource("6_h7ryn")
+
+[node name="AsphaltSign2" parent="." instance=ExtResource("5_o5yen")]
+position = Vector2(-326, 976)
+rotation = 1.5708
+scale = Vector2(0.207031, 0.207031)
+
+[node name="AsphaltSign4" parent="." instance=ExtResource("5_o5yen")]
+position = Vector2(-74, 588)
+rotation = 3.14159
+scale = Vector2(0.207031, 0.207031)
+texture = ExtResource("6_h7ryn")

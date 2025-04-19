@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyne0hbq00b11"]
+
+[ext_resource type="Texture2D" uid="uid://cgukrddftwll3" path="res://art/straight_and_right_turn.png" id="1_esgi6"]
+
+[node name="AsphaltSign" type="Sprite2D"]
+texture = ExtResource("1_esgi6")

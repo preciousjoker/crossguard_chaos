@@ -21,7 +21,6 @@ func _ready() -> void:
 	
 	GameEvents.car_processed.connect(func() -> void:
 		cars_left -= 1
-		print("Cars left: %d" % cars_left)
 		if cars_left <= 0:
 			GameEvents.level_cleared.emit()
 	)

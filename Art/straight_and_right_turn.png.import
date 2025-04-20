@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brchckdwj0r1q"
-path="res://.godot/imported/car_light.png-f05576e2255fd8224810d2bb6713907e.ctex"
+uid="uid://cgukrddftwll3"
+path="res://.godot/imported/straight_and_right_turn.png-b0aaff40448062f41a2eb11ac50ba901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/car_light.png"
-dest_files=["res://.godot/imported/car_light.png-f05576e2255fd8224810d2bb6713907e.ctex"]
+source_file="res://Art/straight_and_right_turn.png"
+dest_files=["res://.godot/imported/straight_and_right_turn.png-b0aaff40448062f41a2eb11ac50ba901.ctex"]
 
 [params]
 

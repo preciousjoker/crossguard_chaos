@@ -8,6 +8,8 @@ enum EDriveMode {STOP = 0, TURNING = 1, DRIVE = 2}
 @onready var left_turn_light: Sprite2D = %LeftTurnLight
 @onready var right_turn_light: Sprite2D = %RightTurnLight
 @onready var rage_meter: ProgressBar = %RageMeter
+@onready var horn: AudioStreamPlayer2D = %horn
+@onready var click_area: Area2D = %ClickArea
 
 @export var stop_distance = 100.0
 @export var max_speed: float = 600.0
@@ -24,6 +26,7 @@ var valid_waypoints: Array[Waypoint] = []
 var _waypoint: Waypoint = null
 var _previous_waypoint: Waypoint = null
 var should_brake: bool = true	
+var honking: bool = false
 var requires_signal_to_go = false
 var will_turn: bool = false
 var turn_direction: ETurnDirection = ETurnDirection.NONE
@@ -42,7 +45,7 @@ func assign_random_color() -> void:
 
 func prepare_rage_meter() -> void:
 	rage_meter.max_value = max_time / rage_increase
-	print("Max Value: %f" % rage_meter.max_value)
+	#print("Max Value: %f" % rage_meter.max_value)
 	rage_meter.value = 0.0
 
 
@@ -71,6 +74,16 @@ func _ready() -> void:
 		toggle_turn_light(turn_direction)
 	)
 	turn_signal_timer.start(0.0)
+	
+	
+	# horn
+	horn.finished.connect(func() -> void:
+		horn.stop()
+		horn.seek(0.0)
+		honking = false
+	)
+	
+	click_area.connect("input_event", on_input_event)
 
 
 func toggle_turn_light(turn_direction: ETurnDirection) -> void:
@@ -121,10 +134,29 @@ func update_rage_meter(delta: float) -> void:
 		
 	var amount_increase: float = (rage_increase + additional_increase) * delta
 	rage_meter.value += amount_increase
+	
+	
+	if (rage_meter.value / rage_meter.max_value >= 0.75) and !honking:
+		honk()
+	
+	
+	if rage_meter.value >= rage_meter.max_value:
+		disable_brake_check()
+		drive()
 
 
 func _process(delta: float) -> void:
 	update_rage_meter(delta)
+	
+
+func on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	var click = event as InputEventMouseButton
+	if click and click.is_released and click.button_index == 1:
+		print("Clicked car test")
+		can_build_rage = false
+		disable_brake_check()
+		requires_signal_to_go = false
+		drive()
 
 
 func _physics_process(delta: float) -> void:
@@ -196,8 +228,34 @@ func stop(in_stop_area: bool) -> void:
 	if in_stop_area:
 		requires_signal_to_go = true
 	
+	
 func drive() -> void:
 	drive_mode = EDriveMode.DRIVE
 	
 func disable_brake_check() -> void:
 	should_brake = false
+	
+func honk() -> void:
+	horn.seek(0.0)
+	horn.play(0.0)
+	honking = true
+	shake()
+
+
+func shake() -> void:
+	var tween := create_tween()
+	var move_amount = 10.0
+	var x_pos: float = global_position.x
+	var y_pos: float = global_position.y
+	
+	var horizontal = abs(transform.x.x) == 1.0
+	if horizontal:
+		tween.tween_property(self, "global_position:x", x_pos + (move_amount * sign(transform.x.x)), 0.15)
+		tween.finished.connect(func() -> void:
+			tween.tween_property(self, "global_position:x", x_pos - (move_amount * sign(transform.x.x)), 0.3)	
+		)
+	else:
+		tween.tween_property(self, "global_position:y", y_pos + (move_amount * sign(transform.x.y)), 0.15)
+		tween.finished.connect(func() -> void:
+			tween.tween_property(self, "global_position:y", y_pos - (move_amount * sign(transform.x.y)), 0.3)	
+		)

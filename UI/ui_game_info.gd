@@ -9,6 +9,10 @@ func _ready() -> void:
 	var world: Node = null
 	var root = get_tree().root
 	
+	GameEvents.level_timer_expired.connect(func() -> void:
+		hide()	
+	)
+	
 	# go through root children and find the world and game manager
 	for child in root.get_children():
 		print(child.name)

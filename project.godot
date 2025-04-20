@@ -32,7 +32,7 @@ waypoint="Navigational Waypoint for automobiles"
 
 2d_physics/layer_1="Car"
 2d_physics/layer_2="StopArea"
-2d_physics/layer_3="s"
+2d_physics/layer_3="CarClick"
 
 [rendering]
 

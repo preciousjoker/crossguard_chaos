@@ -25,19 +25,20 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_key_pressed(signal_key) and !was_signal_key_pressed:
-		was_signal_key_pressed = true
-	
-	if !Input.is_key_pressed(signal_key) and was_signal_key_pressed:
-		was_signal_key_pressed = false
-		if car != null:
-			car.can_build_rage = false
-			car.disable_brake_check()
-			car.requires_signal_to_go = false
-			car.drive()
-			
-	# Update tracking variable for next frame
-	was_signal_key_pressed = Input.is_key_pressed(signal_key)
+	#if Input.is_key_pressed(signal_key) and !was_signal_key_pressed:
+		#was_signal_key_pressed = true
+	#
+	#if !Input.is_key_pressed(signal_key) and was_signal_key_pressed:
+		#was_signal_key_pressed = false
+		#if car != null:
+			#car.can_build_rage = false
+			#car.disable_brake_check()
+			#car.requires_signal_to_go = false
+			#car.drive()
+			#
+	## Update tracking variable for next frame
+	#was_signal_key_pressed = Input.is_key_pressed(signal_key)
+	pass
 
 
 func find_game_manager():

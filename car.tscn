@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://de0t32mi52yll"]
+[gd_scene load_steps=9 format=3 uid="uid://de0t32mi52yll"]
 
 [ext_resource type="Script" path="res://car.gd" id="1_fgk4r"]
 [ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://Art/base_car.png" id="2_d32ma"]
 [ext_resource type="Texture2D" uid="uid://brchckdwj0r1q" path="res://Art/car_light.png" id="3_oi6tj"]
+[ext_resource type="AudioStream" uid="uid://psogb1772ek4" path="res://Music/car_honk.ogg" id="4_qy6e2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp10k"]
 radius = 9.5
@@ -23,6 +24,9 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lykft"]
+size = Vector2(113, 55)
 
 [node name="CarHitBox" type="Area2D"]
 collision_mask = 3
@@ -53,6 +57,7 @@ texture = ExtResource("3_oi6tj")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
+exclude_parent = false
 collide_with_areas = true
 collide_with_bodies = false
 
@@ -71,3 +76,19 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_x8xli")
 step = 0.001
 value = 50.0
 show_percentage = false
+
+[node name="horn" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_qy6e2")
+volume_db = -10.0
+
+[node name="ClickArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+z_index = 10
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(-2.5, 1.5)
+shape = SubResource("RectangleShape2D_lykft")
+debug_color = Color(0.808112, 0.413759, 0, 0.42)

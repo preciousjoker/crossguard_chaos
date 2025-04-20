@@ -13,6 +13,10 @@ func _ready() -> void:
 		hide()	
 	)
 	
+	GameEvents.car_crash.connect(func() -> void:
+		hide()	
+	)
+	
 	# go through root children and find the world and game manager
 	for child in root.get_children():
 		print(child.name)

@@ -152,7 +152,6 @@ func _process(delta: float) -> void:
 func on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var click = event as InputEventMouseButton
 	if click and click.is_released and click.button_index == 1:
-		print("Clicked car test")
 		can_build_rage = false
 		disable_brake_check()
 		requires_signal_to_go = false

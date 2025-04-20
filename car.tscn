@@ -32,9 +32,13 @@ size = Vector2(113, 55)
 collision_mask = 3
 script = ExtResource("1_fgk4r")
 stop_distance = 150.0
+max_speed = 400.0
 turn_signal_interval = 0.5
 possible_colors = Array[Color]([Color(0.741495, 0.232378, 0.688325, 1), Color(0.746815, 0, 0.0900944, 1), Color(0, 0.638572, 0.967057, 1), Color(0, 0.345098, 0.901961, 1), Color(0.475657, 0.154644, 1.44392e-07, 1), Color(0.0164856, 0.525203, 0.506492, 1), Color(0.50431, 0.219765, 4.81308e-08, 1), Color(0.317199, 0.0005317, 0.439672, 1)])
 max_time = 5.0
+rage_increase = 0.4
+queue_multiplier = 1.35
+top_queue_multiplier = 1.85
 
 [node name="CarSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true

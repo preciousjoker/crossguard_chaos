@@ -11,6 +11,6 @@ func _ready() -> void:
 	)
 	
 	btn_how_to.pressed.connect(func() -> void:
-		get_tree().change_scene_to_file("res://UI/how_to_play.tscn")
+		get_tree().change_scene_to_file("res://lvl_how_to.tscn")
 	)
 	

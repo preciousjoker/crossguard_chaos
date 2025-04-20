@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 	btn_next_level.connect("pressed", func() -> void:
 		#load next level
-		GameEvents.load_next_level.emit()
+		get_tree().change_scene_to_file("res://Levels/Level1.tscn")
 	)
 	
 	btn_quit.connect("pressed", func() -> void:

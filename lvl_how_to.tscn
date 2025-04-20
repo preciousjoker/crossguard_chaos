@@ -1,0 +1,807 @@
+[gd_scene load_steps=9 format=3 uid="uid://7ukhutd81ncp"]
+
+[ext_resource type="Script" path="res://lvl_how_to.gd" id="1_b2lkk"]
+[ext_resource type="Texture2D" uid="uid://c4ws8ytsvvl7x" path="res://Art/road_piece.png" id="1_w1sbr"]
+[ext_resource type="Texture2D" uid="uid://ct8n7e0ch0w3k" path="res://Art/street_piece.png" id="2_k3oac"]
+[ext_resource type="Texture2D" uid="uid://rovk7bdkfysp" path="res://Art/crosswalk.png" id="3_r5iss"]
+[ext_resource type="Texture2D" uid="uid://bhy0huwlje085" path="res://Art/base_car.png" id="4_oueqh"]
+[ext_resource type="Texture2D" uid="uid://brchckdwj0r1q" path="res://Art/car_light.png" id="5_xotu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgpvb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4weui"]
+bg_color = Color(0.69246, 1.841e-06, 7.70092e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Lvl_How_To" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2lkk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HowTo_1" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lane" type="Control" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoadPiece2" type="TextureRect" parent="CanvasLayer/HowTo_1/Lane"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = 123.0
+offset_right = -7.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("1_w1sbr")
+expand_mode = 1
+
+[node name="Lane2" type="Control" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -175.0
+offset_right = 65.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoadPiece2" type="TextureRect" parent="CanvasLayer/HowTo_1/Lane2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = 13.0
+offset_right = 32.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w1sbr")
+expand_mode = 1
+
+[node name="RoadPiece3" type="TextureRect" parent="CanvasLayer/HowTo_1/Lane2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = 276.0
+offset_right = 44.0
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_k3oac")
+expand_mode = 1
+
+[node name="Crosswalk" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 124.0
+offset_right = 58.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("3_r5iss")
+expand_mode = 1
+
+[node name="Crosswalk2" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = 72.0
+offset_right = 88.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_r5iss")
+expand_mode = 1
+
+[node name="CarTexture" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+modulate = Color(0.0901961, 0.572549, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = 188.0
+offset_right = -194.0
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_oueqh")
+expand_mode = 1
+
+[node name="Headlight_L" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = 174.0
+offset_right = -141.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="Headlight_R" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = 200.0
+offset_right = -141.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="CarTexture2" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+modulate = Color(0.0901961, 0.298039, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -74.0
+offset_right = 131.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("4_oueqh")
+expand_mode = 1
+
+[node name="Headlight_L2" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -29.0
+offset_right = -10.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="Headlight_R2" type="TextureRect" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -28.0
+offset_right = 17.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -526.0
+offset_top = 20.0
+offset_right = 524.0
+offset_bottom = 183.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Manage traffic by clicking on 
+the cars that should go next."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HowTo_1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -123.0
+offset_right = 330.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Headlights will indicate 
+which direction the cars are 
+going to drive off in"
+horizontal_alignment = 1
+
+[node name="HowTo_2" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -598.0
+offset_top = 7.0
+offset_right = 599.0
+offset_bottom = 170.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Cars will build up road rage if they 
+are waiting too long. 
+
+Especially if they have been at the crosswalk 
+before other cars"
+horizontal_alignment = 1
+
+[node name="street" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 401.0
+offset_top = 120.0
+offset_right = 582.0
+offset_bottom = 429.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("1_w1sbr")
+expand_mode = 1
+
+[node name="street2" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 121.0
+offset_right = 86.0
+offset_bottom = 430.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("1_w1sbr")
+expand_mode = 1
+
+[node name="street3" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 86.0
+offset_top = 122.0
+offset_right = 268.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("2_k3oac")
+expand_mode = 1
+
+[node name="crosswalk2" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 141.0
+offset_top = 118.0
+offset_right = 325.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("3_r5iss")
+expand_mode = 1
+
+[node name="crosswalk3" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = 118.0
+offset_right = 141.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("3_r5iss")
+expand_mode = 1
+
+[node name="Car" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+modulate = Color(0.164139, 0.333468, 4.81308e-08, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = 190.0
+offset_right = -107.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_oueqh")
+expand_mode = 1
+
+[node name="Car2" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+modulate = Color(0.595684, 0, 0.00799996, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 283.0
+offset_top = 227.0
+offset_right = 411.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("4_oueqh")
+expand_mode = 1
+
+[node name="car_light" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = 176.0
+offset_right = -59.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="car_light2" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = 206.0
+offset_right = -60.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="car_light3" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 86.0
+offset_right = 230.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="car_light4" type="TextureRect" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 111.0
+offset_right = 227.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="RageMeter" type="ProgressBar" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = 186.0
+offset_right = -121.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tgpvb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4weui")
+value = 50.0
+show_percentage = false
+
+[node name="RageMeter2" type="ProgressBar" parent="CanvasLayer/HowTo_2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 163.0
+offset_top = 94.0
+offset_right = 267.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tgpvb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4weui")
+value = 50.0
+show_percentage = false
+
+[node name="HowTo_3" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -595.0
+offset_top = 28.0
+offset_right = 602.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "If Road Rage gets too high the car will honk and 
+start lurching forward. Letting you know they
+ are about to go even if you don't tell them to."
+horizontal_alignment = 1
+
+[node name="street2" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = 93.0
+offset_right = 66.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("1_w1sbr")
+expand_mode = 1
+
+[node name="street4" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 400.0
+offset_top = 93.0
+offset_right = 608.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("1_w1sbr")
+expand_mode = 1
+
+[node name="street3" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 95.0
+offset_right = 350.0
+offset_bottom = 392.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("2_k3oac")
+expand_mode = 1
+
+[node name="crosswalk2" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 148.0
+offset_top = 97.0
+offset_right = 351.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("3_r5iss")
+expand_mode = 1
+
+[node name="crosswalk3" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 97.0
+offset_right = 117.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("3_r5iss")
+expand_mode = 1
+
+[node name="Car" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+modulate = Color(0.164139, 0.333468, 4.81308e-08, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = 185.0
+offset_right = -155.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_oueqh")
+expand_mode = 1
+
+[node name="Car2" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+modulate = Color(0.595684, 0, 0.00799996, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 69.0
+offset_top = 205.0
+offset_right = 197.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("4_oueqh")
+expand_mode = 1
+
+[node name="car_light3" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 64.0
+offset_right = 16.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="car_light4" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 89.0
+offset_right = 16.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="car_light" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = 171.0
+offset_right = -107.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="car_light2" type="TextureRect" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = 201.0
+offset_right = -108.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xotu1")
+expand_mode = 1
+
+[node name="RageMeter2" type="ProgressBar" parent="CanvasLayer/HowTo_3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = 71.0
+offset_right = 55.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_tgpvb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4weui")
+value = 100.0
+show_percentage = false
+
+[node name="Btn_Next" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -1.0
+offset_right = -26.0
+offset_bottom = 49.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "NEXT"
+
+[node name="Btn_Previous" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -1.0
+offset_right = 172.0
+offset_bottom = 49.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "PREVIOUS"
+
+[node name="Btn_Play" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -6.0
+offset_right = 77.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "PLAY"

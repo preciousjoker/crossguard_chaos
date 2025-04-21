@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bh3p2ud1yqrt8"]
 
 [ext_resource type="PackedScene" uid="uid://c72s1wbnb7uy0" path="res://GameManager.tscn" id="1_w8yt7"]
-[ext_resource type="PackedScene" uid="uid://8utlquqbbcsq" path="res://test_level.tscn" id="2_0vr8g"]
+[ext_resource type="PackedScene" uid="uid://8utlquqbbcsq" path="res://Levels/test_level.tscn" id="2_0vr8g"]
 [ext_resource type="PackedScene" uid="uid://liedta27gnon" path="res://removal_area.tscn" id="3_xsqhl"]
 [ext_resource type="PackedScene" uid="uid://iwe4d7cmcilt" path="res://spawn_area.tscn" id="4_jv7i8"]
 [ext_resource type="PackedScene" uid="uid://drosal78j0pat" path="res://StopArea.tscn" id="5_8fr7b"]
@@ -211,6 +211,7 @@ owning_lane = 3
 waypoint_color = Color(1, 1, 0, 1)
 
 [node name="Lane2_Waypoints" type="Node2D" parent="World2D"]
+visible = false
 position = Vector2(0, 900)
 
 [node name="Lane2WP_1" parent="World2D/Lane2_Waypoints" node_paths=PackedStringArray("left_waypoint", "right_waypoint") instance=ExtResource("6_a8fdb")]

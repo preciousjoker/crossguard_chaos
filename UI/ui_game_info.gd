@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 	GameEvents.level_timer_expired.connect(func() -> void:
 		hide()	
-	)
+	) 
 	
 	GameEvents.car_crash.connect(func() -> void:
 		hide()	

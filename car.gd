@@ -1,6 +1,6 @@
 class_name Car extends Area2D
 
-enum ETurnDirection {NONE = 0, RIGHT = 1, LEFT = 2}
+enum ETurnDirection {ALL = 0, NONE = 1, RIGHT = 2, LEFT = 3}
 enum EDriveMode {STOP = 0, TURNING = 1, DRIVE = 2}
 @onready var turn_signal_timer: Timer = %TurnSignalTimer
 @onready var car_sprite: Sprite2D = %CarSprite
@@ -52,7 +52,6 @@ func prepare_rage_meter() -> void:
 func _ready() -> void:
 	prepare_rage_meter()
 	assign_random_color()
-	determine_turn_direction()
 	ray_cast_2d.exclude_parent = true
 	ray_cast_2d.set_target_position(to_local(position + (transform.x * stop_distance)))
 	
@@ -209,7 +208,20 @@ func update_drive_mode_straight(delta: float) -> void:
 	
 	
 
-func determine_turn_direction():
+func determine_turn_direction(invalid_turn_direction: ETurnDirection, right_turn_only:bool = false, left_turn_only:bool = false, straight_only: bool = false):
+	
+	if left_turn_only:
+		turn_direction = ETurnDirection.LEFT
+		return
+	
+	if right_turn_only:
+		turn_direction = ETurnDirection.RIGHT
+		return
+	
+	# this is our default direction, do nothing
+	if straight_only:
+		return
+	
 	# determine if this car will turn. Need to determine right or left?
 	var rand_range = randf_range(0.0, 1.0)
 	will_turn = rand_range > 0.50
@@ -219,6 +231,13 @@ func determine_turn_direction():
 		var turn_direction_value = randf_range(0.0, 1.0)
 		turn_direction = ETurnDirection.LEFT if turn_direction_value > 0.5 else ETurnDirection.RIGHT
 		#print("Turn direction value: %f - Turn Direction: %s" % ([turn_direction_value, str(turn_direction)]))
+		
+		# Hack to make sure we pick the opposite of invalid turn direction
+		if invalid_turn_direction == turn_direction and turn_direction == ETurnDirection.LEFT:
+			turn_direction = ETurnDirection.RIGHT
+		if invalid_turn_direction == turn_direction and turn_direction == ETurnDirection.RIGHT:
+			turn_direction = ETurnDirection.LEFT
+			
 
 
 func stop(in_stop_area: bool) -> void:

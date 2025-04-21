@@ -1,0 +1,275 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2gvmfvu7nmej"]
+
+[ext_resource type="Texture2D" uid="uid://c4ws8ytsvvl7x" path="res://Art/road_piece.png" id="1_4o4og"]
+[ext_resource type="Texture2D" uid="uid://dmslir7fb4fl4" path="res://Art/turn_sign.png" id="2_8sajf"]
+[ext_resource type="Texture2D" uid="uid://ct8n7e0ch0w3k" path="res://Art/street_piece.png" id="2_86q2u"]
+[ext_resource type="Texture2D" uid="uid://rovk7bdkfysp" path="res://Art/crosswalk.png" id="3_vrde6"]
+[ext_resource type="Texture2D" uid="uid://br7637g7klab2" path="res://Art/single_lane.png" id="4_lkpju"]
+[ext_resource type="Texture2D" uid="uid://neb70fm3rofx" path="res://Art/solid_line.png" id="5_d283s"]
+[ext_resource type="Texture2D" uid="uid://cgukrddftwll3" path="res://Art/straight_and_right_turn.png" id="7_c7pnk"]
+[ext_resource type="Texture2D" uid="uid://dnoxwkcexistg" path="res://Art/left_straight_right.png" id="8_8kvjy"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Lane1" type="Node2D" parent="."]
+position = Vector2(35, -85)
+
+[node name="RoadPiece" type="Sprite2D" parent="Lane1"]
+position = Vector2(-495, 5)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece5" type="Sprite2D" parent="Lane1"]
+position = Vector2(-251, 485)
+scale = Vector2(2.66, 2.26667)
+texture = ExtResource("2_86q2u")
+
+[node name="RoadPiece2" type="Sprite2D" parent="Lane1"]
+position = Vector2(-495, -295)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadSign" type="Sprite2D" parent="Lane1"]
+z_index = 1
+position = Vector2(-254.5, 75)
+scale = Vector2(0.314453, 0.314453)
+texture = ExtResource("2_8sajf")
+flip_v = true
+
+[node name="RoadPiece3" type="Sprite2D" parent="Lane1"]
+position = Vector2(-495, -595)
+texture = ExtResource("1_4o4og")
+
+[node name="Crosswalk" type="Sprite2D" parent="Lane1"]
+position = Vector2(-270, 205)
+scale = Vector2(2.5, 1)
+texture = ExtResource("3_vrde6")
+
+[node name="RoadPiece4" type="Sprite2D" parent="Lane1"]
+position = Vector2(-495, -895)
+texture = ExtResource("1_4o4og")
+
+[node name="SingleLane" type="Sprite2D" parent="Lane1"]
+position = Vector2(-257.25, -443)
+scale = Vector2(1.10333, 7.96)
+texture = ExtResource("4_lkpju")
+
+[node name="single_line" type="Sprite2D" parent="Lane1"]
+position = Vector2(-335, -443)
+scale = Vector2(1, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="yellow_line1" type="Sprite2D" parent="Lane1"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(-162.958, -443)
+rotation = -3.14159
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="yellow_line2" type="Sprite2D" parent="Lane1"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(-185, -443)
+rotation = -3.14159
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="RoadPiece9" type="Sprite2D" parent="Lane1"]
+position = Vector2(-4.99991, -900)
+rotation = -3.14159
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece10" type="Sprite2D" parent="Lane1"]
+position = Vector2(-4.99994, -600)
+rotation = -3.14159
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece11" type="Sprite2D" parent="Lane1"]
+position = Vector2(-4.99997, -300)
+rotation = -3.14159
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece12" type="Sprite2D" parent="Lane1"]
+position = Vector2(-5, 0)
+rotation = -3.14159
+texture = ExtResource("1_4o4og")
+
+[node name="Lane2" type="Node2D" parent="."]
+position = Vector2(-170, 880)
+rotation = 3.14159
+
+[node name="RoadPiece" type="Sprite2D" parent="Lane2"]
+position = Vector2(-201, -7.00004)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece2" type="Sprite2D" parent="Lane2"]
+position = Vector2(-200, -307)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadSign" type="Sprite2D" parent="Lane2"]
+z_index = 1
+position = Vector2(49.5, 64.5)
+scale = Vector2(0.314453, 0.314453)
+texture = ExtResource("2_8sajf")
+flip_v = true
+
+[node name="RoadSign2" type="Sprite2D" parent="Lane2"]
+z_index = 1
+position = Vector2(-282, 64.5)
+scale = Vector2(0.314453, 0.314453)
+texture = ExtResource("7_c7pnk")
+flip_h = true
+flip_v = true
+
+[node name="RoadPiece3" type="Sprite2D" parent="Lane2"]
+position = Vector2(-200, -607)
+texture = ExtResource("1_4o4og")
+
+[node name="Crosswalk2" type="Sprite2D" parent="Lane2"]
+z_index = 1
+position = Vector2(47.8153, 184)
+scale = Vector2(2.63454, 1)
+texture = ExtResource("3_vrde6")
+
+[node name="RoadPiece4" type="Sprite2D" parent="Lane2"]
+position = Vector2(-200, -907)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece5" type="Sprite2D" parent="Lane2"]
+position = Vector2(295, -2.58287e-05)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece6" type="Sprite2D" parent="Lane2"]
+position = Vector2(295, -300)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece7" type="Sprite2D" parent="Lane2"]
+position = Vector2(295, -600)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece8" type="Sprite2D" parent="Lane2"]
+position = Vector2(295, -900)
+texture = ExtResource("1_4o4og")
+
+[node name="SingleLane" type="Sprite2D" parent="Lane2"]
+position = Vector2(37.8299, -453.5)
+scale = Vector2(1.16227, 7.96)
+texture = ExtResource("4_lkpju")
+
+[node name="single_line" type="Sprite2D" parent="Lane2"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(125, -452)
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="single_line3" type="Sprite2D" parent="Lane2"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(145, -452)
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="single_line2" type="Sprite2D" parent="Lane2"]
+position = Vector2(-40, -447.179)
+scale = Vector2(1.03168, 7.89572)
+texture = ExtResource("5_d283s")
+
+[node name="Lane3" type="Node2D" parent="."]
+position = Vector2(-855, 315)
+rotation = -1.5708
+
+[node name="RoadPiece" type="Sprite2D" parent="Lane3"]
+position = Vector2(-175, -7.00005)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece2" type="Sprite2D" parent="Lane3"]
+position = Vector2(-175, -307)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece3" type="Sprite2D" parent="Lane3"]
+position = Vector2(-175, -607)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece4" type="Sprite2D" parent="Lane3"]
+position = Vector2(-175, -907)
+texture = ExtResource("1_4o4og")
+
+[node name="SingleLane" type="Sprite2D" parent="Lane3"]
+position = Vector2(80, -455)
+scale = Vector2(1, 7.96)
+texture = ExtResource("4_lkpju")
+
+[node name="yellow_line3" type="Sprite2D" parent="Lane3"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(5.67833e-06, -452)
+rotation = 3.14159
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="yellow_line4" type="Sprite2D" parent="Lane3"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(-20, -452)
+rotation = 3.14159
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="Crosswalk2" type="Sprite2D" parent="Lane3"]
+position = Vector2(-88.9593, 192)
+scale = Vector2(1.60203, 1)
+texture = ExtResource("3_vrde6")
+
+[node name="RoadSign4" type="Sprite2D" parent="Lane3"]
+z_index = 1
+position = Vector2(-254, 87)
+rotation = -3.14159
+scale = Vector2(0.246568, 0.246568)
+texture = ExtResource("8_8kvjy")
+
+[node name="Lane4" type="Node2D" parent="."]
+position = Vector2(1203, 315)
+rotation = -1.5708
+
+[node name="RoadPiece" type="Sprite2D" parent="Lane4"]
+position = Vector2(-175, -7.00005)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece2" type="Sprite2D" parent="Lane4"]
+position = Vector2(-175, -307)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece3" type="Sprite2D" parent="Lane4"]
+position = Vector2(-175, -607)
+texture = ExtResource("1_4o4og")
+
+[node name="RoadPiece4" type="Sprite2D" parent="Lane4"]
+position = Vector2(-175, -907)
+texture = ExtResource("1_4o4og")
+
+[node name="SingleLane" type="Sprite2D" parent="Lane4"]
+position = Vector2(80, -455)
+scale = Vector2(1, 7.96)
+texture = ExtResource("4_lkpju")
+
+[node name="yellow_line3" type="Sprite2D" parent="Lane4"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(5.67833e-06, -452)
+rotation = 3.14159
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="yellow_line4" type="Sprite2D" parent="Lane4"]
+modulate = Color(0.915469, 0.80677, 0, 1)
+position = Vector2(-20, -452)
+rotation = 3.14159
+scale = Vector2(0.627232, 7.96)
+texture = ExtResource("5_d283s")
+
+[node name="Crosswalk3" type="Sprite2D" parent="Lane4"]
+position = Vector2(-88.9592, -1013)
+scale = Vector2(1.60203, 1)
+texture = ExtResource("3_vrde6")
+
+[node name="RoadSign3" type="Sprite2D" parent="Lane4"]
+z_index = 1
+position = Vector2(71, -889)
+rotation = 3.14159
+scale = Vector2(0.314453, 0.314453)
+texture = ExtResource("7_c7pnk")
+flip_h = true
+flip_v = true

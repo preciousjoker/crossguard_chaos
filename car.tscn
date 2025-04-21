@@ -80,7 +80,7 @@ show_percentage = false
 [node name="horn" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_qy6e2")
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="ClickArea" type="Area2D" parent="."]
 unique_name_in_owner = true

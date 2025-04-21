@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dji7sffbn2f3h"]
+[gd_scene load_steps=12 format=3 uid="uid://dqclem3w800r8"]
 
 [ext_resource type="PackedScene" uid="uid://c72s1wbnb7uy0" path="res://GameManager.tscn" id="1_qq236"]
-[ext_resource type="PackedScene" uid="uid://d2gvmfvu7nmej" path="res://level_2.tscn" id="3_5vbtx"]
+[ext_resource type="PackedScene" path="res://level_2.tscn" id="3_5vbtx"]
 [ext_resource type="PackedScene" uid="uid://iwe4d7cmcilt" path="res://spawn_area.tscn" id="4_04oep"]
 [ext_resource type="PackedScene" uid="uid://drosal78j0pat" path="res://StopArea.tscn" id="5_6w8rc"]
 [ext_resource type="PackedScene" uid="uid://ddetqnbmplc78" path="res://turn_waypoint.tscn" id="6_gbw2c"]

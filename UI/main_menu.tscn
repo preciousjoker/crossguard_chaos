@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpcioajcj5seh"]
+[gd_scene load_steps=3 format=3 uid="uid://bpcioajcj5seh"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_xubtr"]
+[ext_resource type="Texture2D" uid="uid://dc8ihqkqav0ej" path="res://Art/crossroad_chaos_logo.png" id="2_ouchw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,19 +14,13 @@ script = ExtResource("1_xubtr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -378.0
-offset_top = 10.0
-offset_right = 392.0
-offset_bottom = 219.0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 75
-text = "CROSSROAD 
-CHAOS     "
-horizontal_alignment = 1
+grow_vertical = 2
+color = Color(0.331878, 0.474653, 0.52117, 1)
 
 [node name="Btn_Play" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -74,3 +69,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_top = -66.0
+offset_right = 234.0
+offset_bottom = 293.0
+grow_horizontal = 2
+texture = ExtResource("2_ouchw")
+expand_mode = 1

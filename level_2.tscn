@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2gvmfvu7nmej"]
+[gd_scene load_steps=8 format=3 uid="uid://d2gvmfvu7nmej"]
 
 [ext_resource type="Texture2D" uid="uid://c4ws8ytsvvl7x" path="res://Art/road_piece.png" id="1_4o4og"]
 [ext_resource type="Texture2D" uid="uid://dmslir7fb4fl4" path="res://Art/turn_sign.png" id="2_8sajf"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://br7637g7klab2" path="res://Art/single_lane.png" id="4_lkpju"]
 [ext_resource type="Texture2D" uid="uid://neb70fm3rofx" path="res://Art/solid_line.png" id="5_d283s"]
 [ext_resource type="Texture2D" uid="uid://cgukrddftwll3" path="res://Art/straight_and_right_turn.png" id="7_c7pnk"]
-[ext_resource type="Texture2D" uid="uid://dnoxwkcexistg" path="res://Art/left_straight_right.png" id="8_8kvjy"]
 
 [node name="Level2" type="Node2D"]
 
@@ -118,6 +117,12 @@ texture = ExtResource("7_c7pnk")
 flip_h = true
 flip_v = true
 
+[node name="RoadSign3" type="Sprite2D" parent="Lane2"]
+z_index = 1
+position = Vector2(380.998, 887.001)
+scale = Vector2(0.314453, 0.314453)
+texture = ExtResource("7_c7pnk")
+
 [node name="RoadPiece3" type="Sprite2D" parent="Lane2"]
 position = Vector2(-200, -607)
 texture = ExtResource("1_4o4og")
@@ -219,7 +224,15 @@ z_index = 1
 position = Vector2(-254, 87)
 rotation = -3.14159
 scale = Vector2(0.246568, 0.246568)
-texture = ExtResource("8_8kvjy")
+texture = ExtResource("7_c7pnk")
+
+[node name="RoadSign5" type="Sprite2D" parent="Lane3"]
+z_index = 1
+position = Vector2(-98.0003, 87.0006)
+rotation = -3.14159
+scale = Vector2(0.246568, 0.246568)
+texture = ExtResource("7_c7pnk")
+flip_h = true
 
 [node name="Lane4" type="Node2D" parent="."]
 position = Vector2(1203, 315)

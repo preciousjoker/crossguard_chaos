@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfdjfx1nmh8a2"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_4cwif"]
+
+[node name="Thank_You" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4cwif")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -378.0
+offset_top = 10.0
+offset_right = 392.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Thank you for taking the time to 
+play my game!
+
+Please leave any feedback you 
+may have in the comments :)"
+horizontal_alignment = 1
+
+[node name="Btn_Play" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -17.0
+offset_right = 50.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="Btn_HowTo" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = 94.0
+offset_right = 134.5
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "HOW TO PLAY"
+
+[node name="Btn_Quit" type="Button" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 160.0
+offset_right = 50.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "QUIT"

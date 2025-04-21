@@ -15,11 +15,11 @@ enum EDriveMode {STOP = 0, TURNING = 1, DRIVE = 2}
 @export var max_speed: float = 600.0
 @export var turn_signal_interval: float = 0.15
 @export var possible_colors: Array[Color] = []
-@export_category("Rage")
-@export var max_time: float = 20.0
-@export var rage_increase: float = 0.25
-@export var queue_multiplier: float = 1.25
-@export var top_queue_multiplier: float = 1.75
+#@export_category("Rage")
+var max_time: float = 20.0
+var rage_increase: float = 0.25
+var queue_multiplier: float = 1.25
+var top_queue_multiplier: float = 1.75
 var can_build_rage: bool = true
 
 var valid_waypoints: Array[Waypoint] = []
@@ -47,6 +47,13 @@ func prepare_rage_meter() -> void:
 	rage_meter.max_value = max_time / rage_increase
 	#print("Max Value: %f" % rage_meter.max_value)
 	rage_meter.value = 0.0
+
+
+func set_rage_parameters(max_time: float, rage_increase: float, queue_mult: float, top_queue_mult: float) -> void:
+	self.rage_increase = rage_increase
+	self.max_time = max_time
+	self.queue_multiplier = queue_mult
+	self.top_queue_multiplier = top_queue_mult
 
 
 func _ready() -> void:

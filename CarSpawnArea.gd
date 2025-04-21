@@ -23,6 +23,7 @@ func _ready() -> void:
 				# set up new car and add to scene
 				var car: Car = car_scene.instantiate()
 				car.determine_turn_direction(invalid_turn_direction, right_turn_only, left_turn_only, straight_only)
+				car.set_rage_parameters(game_manager.max_time, game_manager.rage_increase, game_manager.queue_multiplier, game_manager.top_queue_multiplier)
 				car.global_position = self.global_position
 				car.global_rotation = self.global_rotation
 				world2D.add_child(car)

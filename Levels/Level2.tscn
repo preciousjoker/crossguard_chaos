@@ -1,0 +1,255 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqclem3w800r8"]
+
+[ext_resource type="PackedScene" uid="uid://c72s1wbnb7uy0" path="res://GameManager.tscn" id="1_qq236"]
+[ext_resource type="PackedScene" path="res://level_2.tscn" id="3_5vbtx"]
+[ext_resource type="PackedScene" uid="uid://iwe4d7cmcilt" path="res://spawn_area.tscn" id="4_04oep"]
+[ext_resource type="PackedScene" uid="uid://drosal78j0pat" path="res://StopArea.tscn" id="5_6w8rc"]
+[ext_resource type="PackedScene" uid="uid://ddetqnbmplc78" path="res://turn_waypoint.tscn" id="6_gbw2c"]
+[ext_resource type="AudioStream" uid="uid://c3ehu2bn5s606" path="res://Music/crossroad_chaos_1.ogg" id="7_ofauy"]
+[ext_resource type="PackedScene" uid="uid://bbdmby8a3pdk3" path="res://UI/UI_GameOverScreen.tscn" id="8_wd6xd"]
+[ext_resource type="PackedScene" uid="uid://bvk2u2mv17bwo" path="res://UI/ui_game_info.tscn" id="9_d3xbu"]
+[ext_resource type="Script" path="res://UI/ui_game_info.gd" id="10_qst4m"]
+[ext_resource type="PackedScene" uid="uid://liedta27gnon" path="res://removal_area.tscn" id="11_m0kcm"]
+[ext_resource type="PackedScene" uid="uid://c058oqo687wq6" path="res://UI/UI_LevelClearedScreen.tscn" id="11_wcv1d"]
+
+[node name="World" type="Node"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_qq236")]
+max_cars = 30
+time_limit = 50.0
+max_time = 7.0
+rage_increase = 0.3
+queue_multiplier = 1.15
+top_queue_multiplier = 1.5
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="World2D"]
+position = Vector2(0, 900)
+zoom = Vector2(0.4, 0.4)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="World2D"]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="World2D"]
+stream = ExtResource("7_ofauy")
+autoplay = true
+
+[node name="Level2" parent="World2D" instance=ExtResource("3_5vbtx")]
+position = Vector2(188, 516)
+
+[node name="SpawnArea" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(1195, 745)
+rotation = -3.14159
+invalid_turn_direction = 3
+
+[node name="SpawnArea2" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(-1235, 1080)
+invalid_turn_direction = 3
+
+[node name="SpawnArea3" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(-1235, 920)
+invalid_turn_direction = 2
+
+[node name="SpawnArea4" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(-30, 1880)
+rotation = -1.5708
+left_turn_only = true
+
+[node name="SpawnArea5" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(140, 1880)
+rotation = -1.5708
+invalid_turn_direction = 2
+straight_only = true
+
+[node name="SpawnArea6" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(295, 1880)
+rotation = -1.5708
+invalid_turn_direction = 3
+
+[node name="SpawnArea7" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(-350, -160)
+rotation = 1.5708
+straight_only = true
+
+[node name="SpawnArea8" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(-195, -160)
+rotation = 1.5708
+straight_only = true
+
+[node name="SpawnArea9" parent="World2D" instance=ExtResource("4_04oep")]
+position = Vector2(-30, -160)
+rotation = 1.5708
+left_turn_only = true
+
+[node name="Lane1StopArea_A2" parent="World2D" instance=ExtResource("5_6w8rc")]
+position = Vector2(140, 1335)
+
+[node name="Lane1StopArea_A" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(-30, 1335)
+list_of_waypoints = [NodePath("../Lane1Waypoints_A/Lane1WP_A"), NodePath("../Lane1Waypoints_A/Lane1WP_A_2"), NodePath("../Lane1Waypoints_A/Lane1WP_A_3")]
+
+[node name="Lane1StopArea_A3" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(300, 1335)
+list_of_waypoints = [NodePath("../Lane1Waypoints_A3/Lane1WP_A3"), NodePath("../Lane1Waypoints_A3/Lane1WP_A_2")]
+
+[node name="Lane3StopArea_A" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(-30, 510)
+rotation = 3.14159
+list_of_waypoints = [NodePath("../Lane3Waypoints/Lane3WP_A_1"), NodePath("../Lane3Waypoints/Lane3WP_A_2"), NodePath("../Lane3Waypoints/Lane3WP_A_3")]
+
+[node name="Lane3StopArea_A2" parent="World2D" instance=ExtResource("5_6w8rc")]
+position = Vector2(-195, 510)
+rotation = 3.14159
+
+[node name="Lane3StopArea_A3" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(-345, 510)
+rotation = 3.14159
+list_of_waypoints = [NodePath("../Lane3Waypoints/Lane3WP_A2_1"), NodePath("../Lane3Waypoints/Lane3WP_A2_2")]
+
+[node name="Lane4StopArea_A" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(-600, 925)
+rotation = 1.5708
+list_of_waypoints = [NodePath("../Lane4Waypoints/Lane4WP_A1_1"), NodePath("../Lane4Waypoints/Lane4WP_A1_2"), NodePath("../Lane4Waypoints/Lane4WP_A1_3")]
+
+[node name="Lane4StopArea_A2" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(-600, 1080)
+rotation = 1.5708
+list_of_waypoints = [NodePath("../Lane4Waypoints/Lane4WP_A2_1"), NodePath("../Lane4Waypoints/Lane4WP_A2_2")]
+
+[node name="Lane2StopArea" parent="World2D" node_paths=PackedStringArray("list_of_waypoints") instance=ExtResource("5_6w8rc")]
+position = Vector2(500, 755)
+rotation = -1.5708
+list_of_waypoints = [NodePath("../Lane2Waypoints/WaypointArea"), NodePath("../Lane2Waypoints/WaypointArea2")]
+
+[node name="Lane1Waypoints_A" type="Node2D" parent="World2D"]
+visible = false
+position = Vector2(0, 905)
+
+[node name="Lane1WP_A" parent="World2D/Lane1Waypoints_A" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(-30, 35)
+left_waypoint = NodePath("../Lane1WP_A_2")
+update_line = true
+
+[node name="Lane1WP_A_2" parent="World2D/Lane1Waypoints_A" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(-265, -145)
+left_waypoint = NodePath("../Lane1WP_A_3")
+update_line = true
+
+[node name="Lane1WP_A_3" parent="World2D/Lane1Waypoints_A" instance=ExtResource("6_gbw2c")]
+position = Vector2(-865, -145)
+
+[node name="Lane1Waypoints_A2" type="Node2D" parent="World2D"]
+visible = false
+position = Vector2(0, 905)
+
+[node name="Lane1Waypoints_A3" type="Node2D" parent="World2D"]
+visible = false
+position = Vector2(0, 905)
+
+[node name="Lane1WP_A3" parent="World2D/Lane1Waypoints_A3" node_paths=PackedStringArray("right_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(300, 165)
+right_waypoint = NodePath("../Lane1WP_A_2")
+update_line = true
+
+[node name="Lane1WP_A_2" parent="World2D/Lane1Waypoints_A3" instance=ExtResource("6_gbw2c")]
+position = Vector2(570, 165)
+
+[node name="Lane2Waypoints" type="Node2D" parent="World2D"]
+visible = false
+position = Vector2(0, 905)
+
+[node name="WaypointArea" parent="World2D/Lane2Waypoints" node_paths=PackedStringArray("right_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(290, -150)
+right_waypoint = NodePath("../WaypointArea2")
+
+[node name="WaypointArea2" parent="World2D/Lane2Waypoints" instance=ExtResource("6_gbw2c")]
+position = Vector2(290, -470)
+
+[node name="Lane3Waypoints" type="Node2D" parent="World2D"]
+visible = false
+position = Vector2(0, 905)
+
+[node name="Lane3WP_A_1" parent="World2D/Lane3Waypoints" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(-30, -120)
+left_waypoint = NodePath("../Lane3WP_A_2")
+update_line = true
+
+[node name="Lane3WP_A_2" parent="World2D/Lane3Waypoints" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(130, 175)
+left_waypoint = NodePath("../Lane3WP_A_3")
+update_line = true
+
+[node name="Lane3WP_A_3" parent="World2D/Lane3Waypoints" instance=ExtResource("6_gbw2c")]
+position = Vector2(695, 175)
+
+[node name="Lane3WP_A2_1" parent="World2D/Lane3Waypoints" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(-350, -155)
+left_waypoint = NodePath("../Lane3WP_A2_2")
+update_line = true
+
+[node name="Lane3WP_A2_2" parent="World2D/Lane3Waypoints" instance=ExtResource("6_gbw2c")]
+position = Vector2(-745, -155)
+
+[node name="Lane4Waypoints" type="Node2D" parent="World2D"]
+position = Vector2(0, 905)
+
+[node name="Lane4WP_A2_1" parent="World2D/Lane4Waypoints" node_paths=PackedStringArray("right_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(-350, 175)
+right_waypoint = NodePath("../Lane4WP_A2_2")
+
+[node name="Lane4WP_A2_2" parent="World2D/Lane4Waypoints" instance=ExtResource("6_gbw2c")]
+position = Vector2(-350, 525)
+update_line = true
+
+[node name="Lane4WP_A1_1" parent="World2D/Lane4Waypoints" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(-160, 25)
+left_waypoint = NodePath("../Lane4WP_A1_2")
+
+[node name="Lane4WP_A1_2" parent="World2D/Lane4Waypoints" node_paths=PackedStringArray("left_waypoint") instance=ExtResource("6_gbw2c")]
+position = Vector2(135, -75)
+left_waypoint = NodePath("../Lane4WP_A1_3")
+update_line = true
+
+[node name="Lane4WP_A1_3" parent="World2D/Lane4Waypoints" instance=ExtResource("6_gbw2c")]
+position = Vector2(135, -505)
+update_line = true
+
+[node name="GUI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
+
+[node name="GameOverScreen" parent="GUI/CanvasLayer" instance=ExtResource("8_wd6xd")]
+visible = false
+
+[node name="UI_GameInfo" parent="GUI/CanvasLayer" instance=ExtResource("9_d3xbu")]
+process_mode = 3
+mouse_filter = 1
+script = ExtResource("10_qst4m")
+
+[node name="LevelClearedScreen" parent="GUI/CanvasLayer" instance=ExtResource("11_wcv1d")]
+visible = false
+next_level_name = "Thank_You"
+
+[node name="RemovalArea" parent="." instance=ExtResource("11_m0kcm")]
+position = Vector2(-40, 2130)
+scale = Vector2(3.96, 1)
+
+[node name="RemovalArea2" parent="." instance=ExtResource("11_m0kcm")]
+position = Vector2(-40, -435)
+scale = Vector2(3.96, 1)
+
+[node name="RemovalArea3" parent="." instance=ExtResource("11_m0kcm")]
+position = Vector2(1415, 815)
+rotation = -1.55645
+scale = Vector2(3.96, 1)
+
+[node name="RemovalArea4" parent="." instance=ExtResource("11_m0kcm")]
+position = Vector2(-1435, 855)
+rotation = -1.56267
+scale = Vector2(3.96, 1)

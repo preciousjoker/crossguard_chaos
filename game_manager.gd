@@ -4,6 +4,11 @@ class_name GameManager extends Node
 @export var next_level: PackedScene = null
 @export var max_cars: int = 50
 @export var time_limit: float = 60.0
+@export_category("Rage")
+@export var max_time: float = 20.0
+@export var rage_increase: float = 0.25
+@export var queue_multiplier: float = 1.25
+@export var top_queue_multiplier: float = 1.75
 
 var cars_left: int = 0
 var cars_spawned = 0

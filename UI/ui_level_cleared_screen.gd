@@ -1,6 +1,7 @@
 extends Control
 @onready var btn_next_level: Button = %Btn_NextLevel
 @onready var btn_quit: Button = %Btn_Quit
+@export var next_level_name: String = ""
 
 
 func _ready() -> void:
@@ -11,7 +12,9 @@ func _ready() -> void:
 	
 	btn_next_level.connect("pressed", func() -> void:
 		#load next level
-		GameEvents.load_next_level.emit()
+		get_tree().paused = false
+		var next_level_path: String = "res://Levels/" + next_level_name + ".tscn"
+		get_tree().change_scene_to_file(next_level_path)
 	)
 	
 	btn_quit.connect("pressed", func() -> void:

@@ -1,29 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpcioajcj5seh"]
+[gd_scene load_steps=2 format=3 uid="uid://dfdjfx1nmh8a2"]
 
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_xubtr"]
-[ext_resource type="Texture2D" uid="uid://dc8ihqkqav0ej" path="res://Art/crossroad_chaos_logo.png" id="2_ouchw"]
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_4cwif"]
 
-[node name="MainMenu" type="Control"]
+[node name="Thank_You" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xubtr")
+script = ExtResource("1_4cwif")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -378.0
+offset_top = 10.0
+offset_right = 392.0
+offset_bottom = 219.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.331878, 0.474653, 0.52117, 1)
+theme_override_font_sizes/font_size = 35
+text = "Thank you for taking the time to 
+play my game!
+
+Please leave any feedback you 
+may have in the comments :)"
+horizontal_alignment = 1
 
 [node name="Btn_Play" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -40,6 +49,7 @@ text = "PLAY"
 
 [node name="Btn_HowTo" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -62,22 +72,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = 210.0
+offset_top = 160.0
 offset_right = 50.0
-offset_bottom = 273.0
+offset_bottom = 223.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -245.0
-offset_top = -66.0
-offset_right = 234.0
-offset_bottom = 293.0
-grow_horizontal = 2
-texture = ExtResource("2_ouchw")
-expand_mode = 1
